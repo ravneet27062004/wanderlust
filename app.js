@@ -114,11 +114,11 @@ app.use("/",userrouter)
 // app.all("*",(req,res,next)=>{
 //   next(new ExpressError(404,"Page not found!!"))
 // })
-// app.use((err,req,res,next)=>{
-//   let {statuscode=500,message="something went wrong"}= err;
-//   res.status(statuscode).render("listings/error.ejs",{err})
-// //  res.status(statuscode).send(message)
-// })
+app.use((err,req,res,next)=>{
+  let {statuscode=500,message="something went wrong"}= err;
+  res.status(statuscode).render("listings/error.ejs",{err})
+//  res.status(statuscode).send(message)
+})
   
 
 
